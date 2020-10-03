@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthServices {
@@ -9,7 +9,7 @@ class AuthServices {
     scopes: ['email'],
   );
 
-  // static FacebookLogin facebookLogin = FacebookLogin();
+  static FacebookLogin facebookLogin = FacebookLogin();
 
   // create Account
   static Future<SignInSignUpResult> createUser(
@@ -65,26 +65,27 @@ class AuthServices {
     await googleSignIn.signOut();
   }
 
-  // // sign in with facebook
-  // static Future<SignInSignUpResult> signInWithFacebook() async {
-  //   try {
-  //     facebookLogin.loginBehavior = FacebookLoginBehavior.webViewOnly;
-  //     final FacebookLoginResult result = await facebookLogin.logIn(['email']);
-  //     final AuthCredential credential =
-  //     FacebookAuthProvider.getCredential(accessToken: result.accessToken.token);
+  // sign in with facebook
+  static Future<SignInSignUpResult> signInWithFacebook() async {
+    try {
+      facebookLogin.loginBehavior = FacebookLoginBehavior.webViewOnly;
+      final FacebookLoginResult result = await facebookLogin.logIn(['email']);
+      final AuthCredential credential = FacebookAuthProvider.getCredential(
+          accessToken: result.accessToken.token);
 
-  //     final AuthResult authResult = await _auth.signInWithCredential(credential);
+      final AuthResult authResult =
+          await _auth.signInWithCredential(credential);
 
-  //     return SignInSignUpResult(user: authResult.user);
-  //   } catch (e) {
-  //     return SignInSignUpResult(message: e.toString());
-  //   }
-  // }
+      return SignInSignUpResult(user: authResult.user);
+    } catch (e) {
+      return SignInSignUpResult(message: e.toString());
+    }
+  }
 
-//   // sign in with facebook
-//   static Future<void> signOutWithFacebook() async {
-//     await facebookLogin.logOut();
-//   }
+  // sign in with facebook
+  static Future<void> signOutWithFacebook() async {
+    await facebookLogin.logOut();
+  }
 }
 
 class SignInSignUpResult {

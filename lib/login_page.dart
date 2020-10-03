@@ -243,35 +243,35 @@ class _LoginPageState extends State<LoginPage> {
                     Container(
                       width: double.infinity,
                       child: RaisedButton(
-                        onPressed: () {},
-                        // onPressed: () async {
-                        //   SignInSignUpResult result = await AuthServices.signInWithFacebook();
-                        //   if (result.user != null) {
-                        //     // Go to Profile Page
-                        //     Navigator.push(
-                        //         context,
-                        //         MaterialPageRoute(
-                        //             builder: (context) => ProfilePage(
-                        //               user: result.user,
-                        //             )));
-                        //   } else {
-                        //     // Show Dialog
-                        //     showDialog(
-                        //         context: context,
-                        //         builder: (context) => AlertDialog(
-                        //           title: Text('Error'),
-                        //           content: Text(result.message),
-                        //           actions: <Widget>[
-                        //             FlatButton(
-                        //               onPressed: () {
-                        //                 Navigator.pop(context);
-                        //               },
-                        //               child: Text('OK'),
-                        //             )
-                        //           ],
-                        //         ));
-                        //   }
-                        // },
+                        onPressed: () async {
+                          SignInSignUpResult result =
+                              await AuthServices.signInWithFacebook();
+                          if (result.user != null) {
+                            // Go to Profile Page
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ProfilePage(
+                                          user: result.user,
+                                        )));
+                          } else {
+                            // Show Dialog
+                            showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                      title: Text('Error'),
+                                      content: Text(result.message),
+                                      actions: <Widget>[
+                                        FlatButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text('OK'),
+                                        )
+                                      ],
+                                    ));
+                          }
+                        },
                         child: Text(
                           'Login with Facebook',
                         ),
