@@ -1,4 +1,4 @@
-import 'package:auth/FingerPrint/component/Auth.dart';
+import 'package:auth/Security/Authentication/FingerAuthentication/FingerAuthentication.dart';
 import 'package:auth/Screen/LoginScreen.dart';
 import 'package:auth/Screen/Profile_page/profile_page.dart';
 import 'package:auth/Security/Authentication/EmailAuthentication/EmailAuthentication.dart';

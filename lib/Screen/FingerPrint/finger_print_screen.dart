@@ -1,6 +1,5 @@
+import 'package:auth/Security/Authentication/FingerAuthentication/FingerAuthentication.dart';
 import 'package:flutter/material.dart';
-
-import 'component/Auth.dart';
 
 class FingerPrintScreen extends StatelessWidget {
   @override

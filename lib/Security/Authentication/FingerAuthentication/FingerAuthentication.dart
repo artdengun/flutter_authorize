@@ -1,8 +1,8 @@
+import 'package:auth/Screen/FingerPrint/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:local_auth/auth_strings.dart';
 import 'package:local_auth/local_auth.dart';
-
-import '../home.dart';
 
 class Auth extends StatefulWidget {
   @override
@@ -84,12 +84,17 @@ class _AuthState extends State<Auth> {
 
   void _startAuth() async {
     bool _isAuthenticated = false;
+    // ini untuk pesan ketika popup finger print muncul
+    AndroidAuthMessages _androidMsg = AndroidAuthMessages(
+        signInTitle: 'Finger Jari Anda Disini',
+        fingerprintHint: 'letakan jari anda pada touch finger',
+        cancelButton: 'tutup finger pop up');
     try {
       _isAuthenticated = await _auth.authenticateWithBiometrics(
         localizedReason: 'Scan your fingerprint',
         useErrorDialogs: true,
         stickyAuth: true,
-        // androidAuthStrings: null,
+        androidAuthStrings: _androidMsg,
         // iOSAuthStrings: null
       );
     } on PlatformException catch (e) {

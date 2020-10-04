@@ -1,12 +1,13 @@
-import 'package:auth/Screen/HomeScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'HomeScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   final _phoneController = TextEditingController();
   final _codeController = TextEditingController();
 
-  Future<bool> loginUser(String phone, BuildContext context) async {
+  Future<void> loginUser(String phone, BuildContext context) async {
     FirebaseAuth _auth = FirebaseAuth.instance;
 
     _auth.verifyPhoneNumber(
@@ -21,13 +22,11 @@ class LoginScreen extends StatelessWidget {
 
           if (user != null) {
             Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeScreen(
-                  user: user,
-                ),
-              ),
-            );
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HomeScreen(
+                          user: user,
+                        )));
           } else {
             print("Error");
           }
