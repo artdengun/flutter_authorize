@@ -1,5 +1,3 @@
-import 'package:auth/Screen/Profile_page/profile_page.dart';
-import 'package:auth/Security/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
