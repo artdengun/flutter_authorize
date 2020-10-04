@@ -1,8 +1,8 @@
-import 'package:auth/Screen/Authentication/EmailAuthentication/EmailAuthentication.dart';
-import 'package:auth/Screen/Authentication/FacebookAuthentication/FacebookAuthentication.dart';
-import 'package:auth/Screen/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
-import 'package:auth/profile_page.dart';
-import 'package:auth/register_page.dart';
+import 'package:auth/Screen/LoginScreen.dart';
+import 'package:auth/Screen/Profile_page/profile_page.dart';
+import 'package:auth/Security/Authentication/EmailAuthentication/EmailAuthentication.dart';
+import 'package:auth/Security/Authentication/FacebookAuthentication/FacebookAuthentication.dart';
+import 'package:auth/Security/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -285,6 +285,27 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.symmetric(vertical: 16),
                       ),
                     ),
+                    SizedBox(height: 8),
+                    Container(
+                      width: double.infinity,
+                      child: RaisedButton(
+                        onPressed: () async {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        },
+                        child: Text(
+                          'Login with Handphone',
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        color: Colors.white,
+                        elevation: 0,
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                      ),
+                    ),
                     SizedBox(height: 30),
                   ]),
                 ),
@@ -305,7 +326,7 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => RegisterPage()));
+                                    builder: (context) => LoginScreen()));
                           },
                           child: Text(
                             'Register here',

@@ -1,6 +1,6 @@
-import 'package:auth/Screen/Authentication/EmailAuthentication/EmailAuthentication.dart';
-import 'package:auth/login_page.dart';
-import 'package:auth/profile_page.dart';
+import 'package:auth/Screen/Sign_In/login_page.dart';
+import 'package:auth/Screen/Profile_page/profile_page.dart';
+import 'package:auth/Security/Authentication/EmailAuthentication/EmailAuthentication.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {

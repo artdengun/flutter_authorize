@@ -1,7 +1,7 @@
-import 'package:auth/Screen/Authentication/EmailAuthentication/EmailAuthentication.dart';
-import 'package:auth/Screen/Authentication/FacebookAuthentication/FacebookAuthentication.dart';
-import 'package:auth/Screen/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
-import 'package:auth/login_page.dart';
+import 'package:auth/Screen/Sign_In/login_page.dart';
+import 'package:auth/Security/Authentication/EmailAuthentication/EmailAuthentication.dart';
+import 'package:auth/Security/Authentication/FacebookAuthentication/FacebookAuthentication.dart';
+import 'package:auth/Security/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
