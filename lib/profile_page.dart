@@ -1,4 +1,6 @@
-import 'package:auth/auth_service.dart';
+import 'package:auth/Screen/Authentication/EmailAuthentication/EmailAuthentication.dart';
+import 'package:auth/Screen/Authentication/FacebookAuthentication/FacebookAuthentication.dart';
+import 'package:auth/Screen/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
 import 'package:auth/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -190,13 +192,13 @@ class ProfilePage extends StatelessWidget {
                       child: RaisedButton(
                         onPressed: () async {
                           // sign out with facebook
-                          AuthServices.signOutWithFacebook();
+                          FacebookAuthentication.signOutWithFacebook();
 
                           // sign out google
-                          AuthServices.signOutGoogle();
+                          GoogleAuthentication.signOutGoogle();
 
                           // sign out
-                          AuthServices.signOut();
+                          EmailAuthentication.signOut();
 
                           // go to login page
                           Navigator.pushAndRemoveUntil(

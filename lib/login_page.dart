@@ -1,4 +1,6 @@
-import 'package:auth/auth_service.dart';
+import 'package:auth/Screen/Authentication/EmailAuthentication/EmailAuthentication.dart';
+import 'package:auth/Screen/Authentication/FacebookAuthentication/FacebookAuthentication.dart';
+import 'package:auth/Screen/Authentication/GoogleAuthentication/GoogleAuthentication.dart';
 import 'package:auth/profile_page.dart';
 import 'package:auth/register_page.dart';
 import 'package:flutter/material.dart';
@@ -125,8 +127,8 @@ class _LoginPageState extends State<LoginPage> {
                             child: RaisedButton(
                               onPressed: () async {
                                 if (_formKey.currentState.validate()) {
-                                  SignInSignUpResult result =
-                                      await AuthServices.signInWithEmail(
+                                  SignInSignUpEmail result =
+                                      await EmailAuthentication.signInWithEmail(
                                           email: _emailController.text,
                                           pass: _passController.text);
 
@@ -200,8 +202,8 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: RaisedButton(
                         onPressed: () async {
-                          SignInSignUpResult result =
-                              await AuthServices.signInWithGoogle();
+                          SignInSignUpGoogle result =
+                              await GoogleAuthentication.signInWithGoogle();
                           if (result.user != null) {
                             // Go to Profile Page
                             Navigator.push(
@@ -244,8 +246,8 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       child: RaisedButton(
                         onPressed: () async {
-                          SignInSignUpResult result =
-                              await AuthServices.signInWithFacebook();
+                          SignInSignUpFacebook result =
+                              await FacebookAuthentication.signInWithFacebook();
                           if (result.user != null) {
                             // Go to Profile Page
                             Navigator.push(

@@ -1,4 +1,4 @@
-import 'package:auth/auth_service.dart';
+import 'package:auth/Screen/Authentication/EmailAuthentication/EmailAuthentication.dart';
 import 'package:auth/login_page.dart';
 import 'package:auth/profile_page.dart';
 import 'package:flutter/material.dart';
@@ -213,8 +213,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             child: RaisedButton(
                               onPressed: () async {
                                 if (_formKey.currentState.validate()) {
-                                  SignInSignUpResult result =
-                                      await AuthServices.createUser(
+                                  SignInSignUpEmail result =
+                                      await EmailAuthentication.createUser(
                                           email: _emailController.text,
                                           pass: _passController.text);
 
