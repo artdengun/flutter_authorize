@@ -190,7 +190,7 @@ class ProfilePage extends StatelessWidget {
                       child: RaisedButton(
                         onPressed: () async {
                           // sign out with facebook
-                          // AuthServices.signOutWithFacebook();
+                          AuthServices.signOutWithFacebook();
 
                           // sign out google
                           AuthServices.signOutGoogle();
