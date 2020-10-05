@@ -327,6 +327,25 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.symmetric(vertical: 16),
                       ),
                     ),
+                    SizedBox(height: 10),
+                    Container(
+                      width: double.infinity,
+                      child: RaisedButton(
+                        onPressed: () async {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Auth()));
+                        },
+                        child: Text(
+                          'Login with AppleID',
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        color: Colors.white,
+                        elevation: 0,
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                      ),
+                    ),
                     SizedBox(height: 30),
                   ]),
                 ),
