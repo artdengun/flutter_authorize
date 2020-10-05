@@ -1,3 +1,4 @@
+import 'package:auth/Screen/phone/PhoneVerification.dart';
 import 'package:auth/Security/Authentication/FingerAuthentication/FingerAuthentication.dart';
 import 'package:auth/Screen/LoginScreen.dart';
 import 'package:auth/Screen/Profile_page/profile_page.dart';
@@ -294,7 +295,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
+                                  builder: (context) => PhoneVerification()));
                         },
                         child: Text(
                           'Login with Handphone',
